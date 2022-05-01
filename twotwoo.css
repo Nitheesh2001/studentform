@@ -1,0 +1,22 @@
+.back {
+    margin: 25px;
+    margin-left: 400px;
+    margin-top: 150px;
+    background: #a9cef3;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 7px 200px;
+    border-radius: 5px;
+    color: #fbfbfb;
+    border: 0;
+    cursor: pointer;
+}
+.backk {
+    margin: 58px;
+    font-size: 33px;
+    padding: 7px 78px;
+    }
+.create{
+font-size: 25px;
+margin-left: 700px;
+}
