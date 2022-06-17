@@ -98,9 +98,51 @@
 > qnormal<-data.frame(Q=b,quantile=qnorm(b,mean=0,sd=1))
 > head(dnormal)
 > head(qnormal)
-                </div>
+   </div>
             
+    <div> 
+        IMPLEMENT TIME SERIES AND FORECASTING USING R
+        
+        >x <- c(580, 7813, 28266, 59287, 75700,
+ 87820, 95314, 126214, 218843, 471497,
+ 936851, 1508725, 2072113)
+# library required for decimal_date() function
+>library(lubridate)
+# Creating time series object
+# From date 22 January, 2020
+>mts <- ts(x, start = decimal_date(ymd("2020-01-22")),
+ frequency = 365/ 30)
+# plotting the graph
+>plot(mts, xlab ="monthly data",
+ ylab ="Total Positive Cases",
+ main ="COVID-19 Pandemic",
+ col.main ="darkgreen")
+        </div>
+        
+        <div>IMPLEMENT THEORY OF ESTIMATION USING R
             
+            > set.seed(22)
+> heads <- rbinom(1,100,0.5)
+> heads
+> biased_prob <- 0.6
+> likelihood <- function(p){
+ dbinom(heads, 100, p)
+                }
+> negative_likelihood <- function(p){
+ dbinom(heads, 100, p)*-1
+ }
+> nlm(negative_likelihood,0.5,stepmax=0.5)
+$minimum
+[1] -0.07965256
+$estimate
+[1] 0.5199995
+$gradient
+[1] -2.775558e-11
+$code
+[1] 1
+$iterations
+        
+        </div>
             
 </div>
     </div>
