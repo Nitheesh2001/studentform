@@ -46,6 +46,62 @@
          >print (Mode)
 
         </p>
+        
+        <div>
+            IMPLEMENT STRATIFIED RANDOM SAMPLING USING R
+            
+            > set.seed(1)
+> df<-data.frame(grade=rep(c('a','b','c','d'),each=100),gpa=rnorm(400,mean=85,sd=3))
+> head(df)    
+     library(dplyr)
+> sample<-df%>%
+ group_by(grade)%>%
+ sample_n(size=10)
+> table(sample$grade)
+        </div>
+            <div>
+            
+            IMPLEMENT SAMPLING DISTRIBUTION AND CENTRAL LIMIT THEOREM
+                
+                
+                > set.seed(0)
+> data<-runif(n=1000,min=2,max=6)
+> hist(data,col="light green",main="histogram of turtle shell widths")
+                
+                
+                > sample<-c()
+> n=1000
+> for(i in 1:n){
+ sample[i]=mean(sample(data,5,replace=TRUE))
+ }
+> mean(sample)
+> sd(sample)
+                > hist(sample,col="light blue",xlab="turtle shell width",main="sample size=5")
+                
+                > sample30<-c()
+> n=1000
+> n=1000
+> for(i in 1:n){
+ sample30[i]=mean(sample(data,30,replace=TRUE))
+ }
+> mean(sample30)
+> sd(sample30)
+                > hist(sample30,col="pink",xlab="turtle shell width",main="sample size=30")
+                
+            </div>   
+                
+                <div>
+                    IMPLEMENT PROBABILITY DISTRIBUTION USING R
+                    > a<-seq(-3.5,3.5,0.1)
+> b<-seq(0.001,0.99,0.001)
+> dnormal<-data.frame(Z=a,density=dnorm(a,mean=0,sd=1),distribution=pnorm(a,mean=0,sd=1))
+> qnormal<-data.frame(Q=b,quantile=qnorm(b,mean=0,sd=1))
+> head(dnormal)
+> head(qnormal)
+                </div>
+            
+            
+            
 </div>
     </div>
 
