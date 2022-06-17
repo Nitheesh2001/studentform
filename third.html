@@ -17,7 +17,7 @@
 
    
     <p>
-       IMPLEMENT GRAPHS, DIAGRAMS AND MEASURES IN CENTRAL TENDENCY 
+        1 IMPLEMENT GRAPHS, DIAGRAMS AND MEASURES IN CENTRAL TENDENCY 
         
         >barplot(table(iris$Species), main="Iris data",xlab="Species")
         
@@ -48,7 +48,7 @@
         </p>
         
         <div>
-            IMPLEMENT STRATIFIED RANDOM SAMPLING USING R
+           2 IMPLEMENT STRATIFIED RANDOM SAMPLING USING R
             
             > set.seed(1)
 > df<-data.frame(grade=rep(c('a','b','c','d'),each=100),gpa=rnorm(400,mean=85,sd=3))
@@ -61,7 +61,7 @@
         </div>
             <div>
             
-            IMPLEMENT SAMPLING DISTRIBUTION AND CENTRAL LIMIT THEOREM
+           3 IMPLEMENT SAMPLING DISTRIBUTION AND CENTRAL LIMIT THEOREM
                 
                 
                 > set.seed(0)
@@ -91,7 +91,7 @@
             </div>   
                 
                 <div>
-                    IMPLEMENT PROBABILITY DISTRIBUTION USING R
+                   4 IMPLEMENT PROBABILITY DISTRIBUTION USING R
                     > a<-seq(-3.5,3.5,0.1)
 > b<-seq(0.001,0.99,0.001)
 > dnormal<-data.frame(Z=a,density=dnorm(a,mean=0,sd=1),distribution=pnorm(a,mean=0,sd=1))
@@ -101,7 +101,7 @@
    </div>
             
     <div> 
-        IMPLEMENT TIME SERIES AND FORECASTING USING R
+       5 IMPLEMENT TIME SERIES AND FORECASTING USING R
         
         >x <- c(580, 7813, 28266, 59287, 75700,
  87820, 95314, 126214, 218843, 471497,
@@ -119,7 +119,7 @@
  col.main ="darkgreen")
         </div>
         
-        <div>IMPLEMENT THEORY OF ESTIMATION USING R
+        <div> 6  IMPLEMENT THEORY OF ESTIMATION USING R
             
             > set.seed(22)
 > heads <- rbinom(1,100,0.5)
@@ -141,8 +141,22 @@ $gradient
 $code
 [1] 1
 $iterations
-        
         </div>
+            <div>
+                7  IMPLEMENT MEASURES OF DISPERSION USING R
+                
+                > list = c(2, 40, 2, 502, 177, 7, 9)
+ # Variance 
+ > print(var(list))
+ # Standard deviation 
+ > print(sd(list))
+ # Range
+ > print(range(list))
+ # Interquartile range 
+ > print(IQR(list))
+
+            
+            </div>
             
 </div>
     </div>
