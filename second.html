@@ -64,122 +64,22 @@ label for="css">CSS</label><br>
   <label for="age3">61 - 100</label><br><br>
   <input type="submit" value="Submit">
             <p>
-                To implement Chunk Parsing in NLP using python
-            import nltk
-from nltk.corpus import state_union
-from nltk.tokenize import PunktSentenceTokenizer
-import nltk
-nltk.download('state_union')
-import nltk
-nltk.download('punkt')
-import nltk
-nltk.download('averaged_perceptron_tagger')
-train_text=state_union.raw("2005-GWBush.txt")
-sample_text=state_union.raw("2006-GWBush.txt")
-custom_sent_tokenizer=PunktSentenceTokenizer(train_text)
-tokenized=custom_sent_tokenizer.tokenize(sample_text)
-def process_content():
-try:
- for i in tokenized:
- words=nltk.word_tokenize(i)
- tagged=nltk.pos_tag(words)
- print(tagged)
-except Exception as e:
- print(str(e))
-process_content()</p>
-            <p>
-            To implement Sentence Tokenizer in NLP using python
-            import nltk
-nltk.download("punkt")
-data=input("Enter Text :")
-nlt_tokens=nltk.sent_tokenize(data)
-print(nlt_tokens)</p>
-            <p>To implement Stemming and Tokenization in NLP using python
-            from nltk.stem import PorterStemmer
-from nltk.tokenize import word_tokenize
-ps=PorterStemmer()
-words=["program","programs","programmers","programming","programmer"]
-for w in words:
-print(w, " : ", ps.stem(w))
-</p>
-            <p> To implement Tokenization in NLP using python
-            import nltk
-from nltk.tokenize import
-word_tokenize,sent_tokenize,TreebankWordTokenizer,wordpunct_tokenize,TweetTokenizer,MWETokenizer
-nltk.download("punkt")
-text="hope, is the only thing stranger than fear! #Hope #vj.s"
-print(sent_tokenize(text))
-print(wordpunct_tokenize(text))
-text="what you dont want to be done in yourself,dont do to others..."
-tokenizer=TreebankWordTokenizer()
-print(tokenizer.tokenize(text))
-text="hope is the only thing stranger than fear! hunger games #Hope"
-tokenizer=MWETokenizer()
-print(tokenizer.tokenize(word_tokenize(text)))
-tokenizer=MWETokenizer()
-tokenizer.add_mwe(('Hunger’,’Games'))
-print(tokenizer.tokenize(word_tokenize(text)))</p>
-            <p>To implement Wordlist Corpus in NLP using python
-            import nltk
-nltk.download()
-def corpus_info(corpus):
- print (corpus)
- print()
- print("README:", corpus.readme())
- print()
- files=corpus.fileids()
- print(len(files),"files:")
- print()
- print(files)
- file=files[0]
- text=corpus.raw(file)
- print("File",file,len(corpus.paras(file)),"paras",
- len(corpus.sents(file)),"sentences",len(corpus.words(file)),"words",":")
- print(text.encode("utf-8"))
- print()
- if isinstance(corpus,nltk.corpus.TaggedCorpusReader):
- tagged_words=corpus,tagged_words()
- print()
- if isinstance(corpus,nltk.corpus.CategorizedTaggedCorpusReader):
- categories=corpus.categories()
- print(len(categories),"categories:")
- print(categories)
- print()
- category=categories[-1]
- files=corpus.fields(category)
- print(len(files),"files in category",category,":")
- print(files)
- print()
- file=files[0]
- print("File:",file, len(corpus.paras(file)),"paras",
- len(corpus.sents(file)),"sentences", len(corpus.words(file)),"words")
- print()
- print("Raw text:")
- text = corpus.raw(file)
- print(text)
- print()
- print("Tagged text:")
- tagged_words = corpus.tagged_words(file)
- print(tagged_words)
- print()</p>
-
-            <p>To implement Sentence Parsing in NLP using python
-            import pickle
-import subprocess
-import sys
-from nltk import Nonterminal, nonterminals, Production, CFG
-nt1 = Nonterminal('NP')
-nt2 = Nonterminal('VP')
-nt1.symbol()
-nt1 == Nonterminal('NP')
-nt1==nt2
-import nltk
-nltk.parse.chart.demo(2,print_times=False,trace=1,sent='I saw a dog',numparses=1)
-nltk.parse.chart.demo(1,print_times=False,trace=0,sent='I saw John with a dog',numparses=2)
-nltk.parse.chart.demo(2,print_times=False,trace=0,sent='I saw John with a dog',numparses=2)
-nltk.parse.chart.demo(3,print_times=False,trace=0,sent='I saw John with a dog',numparses=2)
-nltk.parse.chart.demo(4,print_times=False,trace=0,sent='I saw John with a dog',numparses=2)
-nltk.parse.chart.demo(5,print_times=False,trace=1,sent='I saw John with a dog',numparses=2)</p>
+                
+<Html>  
+<Head>
+<title>
+simple webpage
+</title>
+</Head>
+<Body>  
+<center>
+<br><h1>HTML simple webpage</h1> <br> <br>
+CLOUD COMPUTING SEMESTER 5 <br><br>
+</center>
+<p>Hello this is my first webpage</p><br>
+</Body>
+</Html>
+               </p>
   <div>
     <button class="back" type="button">
        <a href="form.html",>BACK TO MAIN SCREEN</a></button>
