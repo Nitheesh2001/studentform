@@ -81,7 +81,31 @@ label for="css">CSS</label><br>
                 df_dropped=df.dropna()
                 df
                 df_dropped
+                hhhhhhhhhhhhh
+                data <- read.csv("C:/Users/STC/Desktop/amrutha CA/ELISA.csv")
+
+rownames(data) <- data$Name
+data$Name  <- NULL
+
+data <- -log10(data)
+
+data <- as.matrix(data)
+
+#install.packages("pheatmap")
+
+library("pheatmap")
+
+pheatmap(data)
+
+pheatmap(data, main = "Protein expression (Conc. ng/mL)")
+
+pheatmap(data, main = "Gene expression (RQ)",  display_numbers = TRUE)
+
+pheatmap(data, main = "Protein expression (Conc. ng/mL)", display_numbers = TRUE, cluster_row = FALSE)
+
+pheatmap(data, main = "Protein expression (Conc. ng/mL)", display_numbers = TRUE, cluster_cols = FALSE)
             </p>
+            
   <div>
     <button class="back" type="button">
        <a href="form.html",>BACK TO MAIN SCREEN</a></button>
