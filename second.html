@@ -64,46 +64,305 @@ label for="css">CSS</label><br>
   <label for="age3">61 - 100</label><br><br>
   <input type="submit" value="Submit">
           
-            <p> dv import numpy as np
-            import pandas as pd
-            import seaborn as sns
-            import os
-            df=pd.read_csv("file name")
-            df
-            df.isnull().sum()
-            missing_value=["N/a",na,np.nan]
-            df=pd.read_csv(file name ,na_values=missing_values
-            df.isnull().sum
-            df.isnull().any()
-                sns.heatmap(df.isnll(),ytickleabels=False , annot=True)
-                df.dropna()
-                df.dropna(how='all')
-                df_dropped=df.dropna()
-                df
-                df_dropped
-                hhhhhhhhhhhhh
-                data <- read.csv("C:/Users/STC/Desktop/amrutha CA/ELISA.csv")
+            <p>
+              1. To implement a program to develop turn on and off LED
+void setup() { 
+pinMode(13, OUTPUT); 
+} 
+void loop() { 
+digitalWrite(13, HIGH); 
+delay(1000); 
+digitalWrite(13, LOW); 
+delay(1000); 
+}<br><br>
 
-rownames(data) <- data$Name
-data$Name  <- NULL
+           2. To implement a program to identify objects using PIR Sensor.
+                const int PIR_SENSOR_OUTPUT_PIN = 4; /* PIR sensor O/P pin */
+int warm_up;
+void setup() {
+pinMode(PIR_SENSOR_OUTPUT_PIN, INPUT);
+Serial.begin(9600); /* Define baud rate for serial communication */
+delay(20000); /* Power On Warm Up Delay */
+}
+void loop() {
+int sensor_output;
+sensor_output = digitalRead(PIR_SENSOR_OUTPUT_PIN);
+if( sensor_output == LOW )
+{
+if( warm_up == 1 )
+{
+Serial.print("Warming Up\n\n");
+warm_up = 0;
+delay(2000);
+}
+Serial.print("No object in sight\n\n");
+delay(1000);
+}
+else
+{
+Serial.print("Object detected\n\n");
+warm_up = 1;
+delay(1000);
+}
+}<br><br>
 
-data <- -log10(data)
+              3.  To implement a program to identify objects using IR Sensor.
+                
+                int SensorPin = 2; // connect ir sensor to arduino pin 2
+int out_LED = 13; // conect Led to arduino pin 13
+void setup(){
+pinMode (SensorPin, INPUT); // sensor pin INPUT
+pinMode (out_LED, OUTPUT); // Led pin OUTPUT
+  Serial.begin(9600);
+}
 
-data <- as.matrix(data)
+void loop(){
+  int SensorValue = digitalRead(SensorPin);
+  
+Serial.print("SensorPin Value: ");
+Serial.println(SensorValue);
+delay(100);
+if (SensorValue==LOW)
+  {
+  digitalWrite(out_LED, HIGH); // HIGH MEANS Object Detected
+  }
+  else
+  {
+  digitalWrite(out_LED, LOW); // LOW MEANS NO OBJECT Detected
+  }
+}<br><br>
+                4.: To implement a program to measure moisture using moisture Sensor.
+                
+                const int sensor_pin = A1; /* Soil moisture sensor O/P pin */ 
+void setup() { 
+Serial.begin(9600); /* Define baud rate for serial communication */ 
+} 
+void loop() { 
+float moisture_percentage; 
+int sensor_analog; 
+sensor_analog = analogRead(sensor_pin); 
+moisture_percentage = ( 100 - ( (sensor_analog/1023.00) * 100 ) ); 
+Serial.print("Moisture Percentage = "); 
+Serial.print(moisture_percentage); 
+Serial.print("%\n\n"); 
+delay(1000); 
+}<br><br>
+                5.To implement a program to measure distance using Ultrasonic Sensor.
+                
+                const int pingPin = 7; // Trigger Pin of Ultrasonic Sensor
+const int echoPin = 6; // Echo Pin of Ultrasonic Sensor
+void setup() {
+Serial.begin(9600); // Starting Serial Terminal
+}
+void loop() {
+long duration, inches, cm;
+pinMode(pingPin, OUTPUT);
+digitalWrite(pingPin, LOW);
+delayMicroseconds(2);
+digitalWrite(pingPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(pingPin, LOW);
+pinMode(echoPin, INPUT);
+duration = pulseIn(echoPin, HIGH);
+inches = microsecondsToInches(duration);
+cm = microsecondsToCentimeters(duration);
+Serial.print(inches);
+Serial.print("in, ");
+Serial.print(cm);
+Serial.print("cm");
+Serial.println();
+delay(100);
+}
+long microsecondsToInches(long microseconds) {
+return microseconds / 74 / 2;
+}
+long microsecondsToCentimeters(long microseconds) {
+return microseconds / 29 / 2;
+}
+<br><br>
+                6.: To implement a program to measure the CO2 using gas Sensor.
+                
+                // Sensor pins pin D6 LED output, pin A0 analog Input
+#define ledPin 6
+#define sensorPin A0
+void setup() {
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, LOW);
+}
+void loop() {
+  Serial.print("Analog output: ");
+  Serial.println(readSensor());
+  delay(500);
+}
+//  This function returns the analog data to calling function
+int readSensor() {
+  unsigned int sensorValue = analogRead(sensorPin);  // Read the analog value from sensor
+  unsigned int outputValue = map(sensorValue, 0, 1023, 0, 255); // map the 10-bit data to 8-bit data
+  if (outputValue > 65)
+    analogWrite(ledPin, outputValue); // generate PWM signal
+  else
+    digitalWrite(ledPin, LOW);
+  return outputValue;             // Return analog moisture value
+}
+<br><br>
+                7.: To implement a program to turn on LED using Relay Switch.
+                
+                const int relay = 9; 
+void setup() { 
+// put your setup code here, to run once: 
+pinMode(relay,OUTPUT); 
+digitalWrite(relay, HIGH); 
+} 
+void loop() { 
+// put your main code here, to run repeatedly: 
+digitalWrite(relay, LOW); 
+delay(1000); 
+digitalWrite(relay, HIGH); 
+delay(1000); 
+}
+<br><br>
+                8.: To implement smart lighting system using IR Sensor.
+                
+                int SensorPin = 2; // connect ir sensor to arduino pin 2
+int out_LED = 13; // conect Led to arduino pin 13
+void setup(){
+pinMode (SensorPin, INPUT); // sensor pin INPUT
+pinMode (out_LED, OUTPUT); // Led pin OUTPUT
+  Serial.begin(9600);
+}
 
-#install.packages("pheatmap")
+void loop(){
+  int SensorValue = digitalRead(SensorPin);
+  
+Serial.print("SensorPin Value: ");
+Serial.println(SensorValue);
+delay(100);
+if (SensorValue==LOW)
+  {
+  digitalWrite(out_LED, HIGH); // HIGH MEANS Object Detected
+  }
+  else
+  {
+  digitalWrite(out_LED, LOW); // LOW MEANS NO OBJECT Detected
+  }
+}
+<br><br>
+                9.To implement a smart parking system by detecting empty space in an area using IR Sensor.
+                
+                int SensorPin = 2; // connect ir sensor to arduino pin 2
+int out_LED = 13; // conect Led to arduino pin 13
+void setup(){
+pinMode (SensorPin, INPUT); // sensor pin INPUT
+pinMode (out_LED, OUTPUT); // Led pin OUTPUT
+  Serial.begin(9600);
+}
 
-library("pheatmap")
+void loop(){
+  int SensorValue = digitalRead(SensorPin);
+  
+Serial.print("SensorPin Value: ");
+Serial.println(SensorValue);
+delay(100);
+if (SensorValue==LOW)
+  {
+  digitalWrite(out_LED, HIGH); // HIGH MEANS Object Detected
+  }
+  else
+  {
+  digitalWrite(out_LED, LOW); // LOW MEANS NO OBJECT Detected
+  }
+}<br><br>
+                
 
-pheatmap(data)
+                10.. Smart Weathering monitoring system using DHT11 sensor
+                
+                #include <DHT.h>
+#define DHTPIN 2      // Digital pin connected to the DHT sensor
+#define DHTTYPE DHT11 // DHT 11
+DHT dht(DHTPIN, DHTTYPE); // Initialize DHT sensor
 
-pheatmap(data, main = "Protein expression (Conc. ng/mL)")
+void setup() {
+  Serial.begin(9600); // Initialize serial communication
+  dht.begin();        // Initialize DHT sensor
+}
 
-pheatmap(data, main = "Gene expression (RQ)",  display_numbers = TRUE)
+void loop() {
+  Serial.println("Humidity");
+  Serial.println(dht.readHumidity()); // Print humidity to serial monitor
+  Serial.println("Temperature!");
+  Serial.println(dht.readTemperature());
+  delay(2000);                        // Wait 2 seconds before taking the next reading
+}
+<br><br>
+                11. To design a traffic control system using LED
+                
+                const int redPin = 2;      // Red LED connected to digital pin 2
+const int yellowPin = 3;   // Yellow LED connected to digital pin 3
+const int greenPin = 4;    // Green LED connected to digital pin 4
 
-pheatmap(data, main = "Protein expression (Conc. ng/mL)", display_numbers = TRUE, cluster_row = FALSE)
+void setup() {
+  pinMode(redPin, OUTPUT);
+  pinMode(yellowPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+}
 
-pheatmap(data, main = "Protein expression (Conc. ng/mL)", display_numbers = TRUE, cluster_cols = FALSE)
+void loop() {
+  // Red light
+  digitalWrite(redPin, HIGH);
+  digitalWrite(yellowPin, LOW);
+  digitalWrite(greenPin, LOW);
+  delay(5000);  // 5 seconds
+
+  // Red and yellow light
+  digitalWrite(redPin, HIGH);
+  digitalWrite(yellowPin, HIGH);
+  digitalWrite(greenPin, LOW);
+  delay(2000);  // 2 seconds
+
+  // Green light
+  digitalWrite(redPin, LOW);
+  digitalWrite(yellowPin, LOW);
+  digitalWrite(greenPin, HIGH);
+  delay(5000);  // 5 seconds
+
+  // Yellow light
+  digitalWrite(redPin, LOW);
+  digitalWrite(yellowPin, HIGH);
+  digitalWrite(greenPin, LOW);
+  delay(2000);  // 2 seconds
+}
+<br><br>
+                12. To design a home automation control system using IoT
+                
+                #include <Servo.h>
+
+Servo myservo;  // create servo object to control a servo
+// twelve servo objects can be created on most boards
+
+int pos = 0;    // variable to store the servo position
+
+void setup() {
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+}
+
+void loop() {
+  for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+    // in steps of 1 degree
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+  for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15ms for the servo to reach the position
+  }
+}
+<br><br>
+
+
+                
+                
+                
             </p>
             
   <div>
